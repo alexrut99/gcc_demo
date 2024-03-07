@@ -157,61 +157,26 @@ gdf2 = gpd.GeoDataFrame(
     df2, geometry=gpd.points_from_xy(df2.Easting.astype(float), df2.Northing.astype(float)), crs="EPSG:32647",
 )
 
-# mwa_main = gpd.read_file("./mwa/mwa_m.shp")
-# mwa_main = mwa_main.to_crs(epsg=4326)
-# # print(mwa_main.crs)
-# # mwa_main.head()
 
-# mwa_Distribution = gpd.read_file("./mwa/mwa_d.shp")
-# mwa_Distribution = mwa_Distribution.to_crs(epsg=4326)
-# # print(mwa_Distribution.crs)
-# # mwa_Distribution.head()
 
-# pwa = gpd.read_file("./pwa/pwa.shp")
-# pwa = pwa.to_crs(epsg=4326)
-# # print(mwa_main.crs)
-# # mwa_main.head()
-
-# mwa_main = mwa_main.to_json()
-# mwa_Distribution = mwa_Distribution.to_json()
-# pwa = pwa.to_json()
-
-fg1 = folium.FeatureGroup(name='ท่อประปา', show=False)
+# fg1 = folium.FeatureGroup(name='ท่อประปา', show=False)
 fg2 = folium.FeatureGroup(name='บ่อบาดาลราชการ', show=False)
 fg3 = folium.FeatureGroup(name='บ่อบาดาลเอกชน', show=False)
 # fg4 = folium.FeatureGroup(name='บ่อน้ำบาดาลเอกชน', show=False)
 
-# folium.Marker([40, 74]).add_to(fg1)
+
+
 # folium.GeoJson(
-#     mwa_main,
+#     "./data/mwa_d.geojson",
 #     style_function=lambda feature: {
 #         "fillColor": "#ffff00",
-#         "color": "blue",
+#         "color": "yellow",
 #         "weight": 2,
 #         "dashArray": "5, 5",
 #     },
 # ).add_to(fg1)
 
-folium.GeoJson(
-    "./data/mwa_d.geojson",
-    style_function=lambda feature: {
-        "fillColor": "#ffff00",
-        "color": "yellow",
-        "weight": 2,
-        "dashArray": "5, 5",
-    },
-).add_to(fg1)
 
-
-# folium.GeoJson(
-#     pwa,
-#     style_function=lambda feature: {
-#         "fillColor": "#ffff00",
-#         "color": "#ffe082",
-#         "weight": 2,
-#         "dashArray": "5, 5",
-#     },
-# ).add_to(fg3)
 folium.GeoJson(
     gdf1,
     name="บ่อบาดาลราชการ",
@@ -246,7 +211,7 @@ folium.GeoJson(
 
 
 
-m.add_child(fg1)
+# m.add_child(fg1)
 m.add_child(fg2)
 m.add_child(fg3)
 # m.add_child(fg4)
