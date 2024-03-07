@@ -1,0 +1,12 @@
+branca>=0.6.0
+jinja2>=2.9
+numpy
+requests
+xyzservices
+folium
+pandas
+streamlit
+leafmap
+folium
+geopandas 
+matplotlib
