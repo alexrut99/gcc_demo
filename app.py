@@ -145,7 +145,7 @@ plugins.MousePosition(position='topright', separator=' | ', prefix="Mouse:",
 
 
 
-df1 = pd.read_excel('./data/bkk_gov.xlsx', sheet_name='Sheet1')
+df1 = pd.read_csv('./data/bkk_gov.csv')
 
 gdf1 = gpd.GeoDataFrame(
     df1, geometry=gpd.points_from_xy(df1.utme.astype(float), df1.utmn.astype(float)), crs="EPSG:32647",
